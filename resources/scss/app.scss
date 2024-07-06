@@ -1,3 +1,9 @@
+$primary-color: #ff6900;
+$secondary-color: #1a1a1a;
+$text-color: white;
+$hover-color: black;
+$hover-text-color: #ff6900;
+
 * {
     margin: 0;
     padding: 0;
@@ -11,8 +17,8 @@ body {
     header {
         position: fixed;
         z-index: 1;
-        background-color: #ff6900;
-        box-shadow: 0px 0.2px 0.2px #ff6900;
+        background-color: $primary-color;
+        box-shadow: 0px 0.2px 0.2px $primary-color;
         border: 0.1px solid rgb(0, 0, 0);
         width: 100%;
         padding: 20px;
@@ -25,10 +31,15 @@ body {
                 display: flex;
                 flex-wrap: wrap;
 
-                .col-left {
-                    width: 30%;
+                .col-left,
+                .col-logo,
+                .col-right {
                     display: flex;
                     align-items: center;
+                }
+
+                .col-left {
+                    width: 30%;
 
                     ul {
                         list-style-type: none;
@@ -39,49 +50,45 @@ body {
                             a {
                                 font-size: 20px;
                                 font-weight: 600;
-                                color: white;
+                                color: $text-color;
                                 text-decoration: none;
 
                                 &:hover {
                                     text-decoration: underline;
-                                    color: black;
+                                    color: $hover-color;
                                 }
                             }
                         }
                     }
                 }
+
                 .col-logo {
                     width: 40%;
-                    display: flex;
                     justify-content: center;
-                    align-items: center;
 
                     img {
                         width: 175px;
                     }
                 }
+
                 .col-right {
                     width: 30%;
-                    display: flex;
-                    justify-content: right;
-                    align-items: center;
+                    justify-content: flex-end;
                     gap: 25px;
 
                     i {
                         font-size: 20px;
-                        color: white;
+                        color: $text-color;
 
                         &:hover {
-                            color: black;
+                            color: $hover-color;
                         }
                     }
                 }
             }
         }
-    }
 
-    @media screen and (max-width: 720px) {
-        header {
+        @media screen and (max-width: 720px) {
             .container {
                 .row {
                     .col-left {
@@ -98,10 +105,8 @@ body {
                 }
             }
         }
-    }
 
-    @media screen and (max-width: 500px) {
-        header {
+        @media screen and (max-width: 500px) {
             .container {
                 .row {
                     .col-left {
@@ -121,10 +126,125 @@ body {
     }
 
     main {
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 100px;
+
+            .row {
+                display: flex;
+                flex-wrap: wrap;
+                .col {
+                    margin: 20px;
+                    width: calc(100% / 3 - 40px);
+
+                    @media screen and (max-width: 620px) {
+                        width: calc(100% / 2 - 40px);
+                    }
+
+                    @media screen and (max-width: 420px) {
+                        width: calc(100% - 40px);
+                    }
+
+                    .card {
+                        position: relative;
+                        img {
+                            width: 100%;
+                            margin-bottom: 2px;
+                        }
+
+                        .front {
+                            display: block;
+                        }
+
+                        .back {
+                            display: none;
+                        }
+
+                        &:hover {
+                            .front {
+                                display: none;
+                            }
+
+                            .back {
+                                display: block;
+                            }
+                        }
+
+                        h3 {
+                            margin-bottom: 2px;
+                        }
+
+                        p {
+                            margin-bottom: 2px;
+                        }
+
+                        .orange {
+                            color: red;
+                            font-weight: 600;
+                        }
+
+                        .line-throught {
+                            text-decoration: line-through;
+                            color: black;
+                            font-weight: 600;
+                        }
+
+                        .labels {
+                            position: absolute;
+                            bottom: 120px;
+                            display: flex;
+                            gap: 5px;
+                            color: white;
+                            font-size: 15px;
+                            font-weight: 600;
+
+                            .discount {
+                                width: auto;
+                                padding: 5px;
+                                background-color: red;
+                                display: grid;
+                                place-items: center;
+                            }
+                            .tag {
+                                width: auto;
+                                padding: 5px;
+                                background-color: green;
+                                display: grid;
+                                place-items: center;
+                            }
+                        }
+
+                        .hearth {
+                            position: absolute;
+                            right: 0px;
+                            top: 25px;
+                            padding: 10px;
+                            padding-left: 20px;
+                            padding-right: 20px;
+                            background-color: white;
+
+                            span {
+                                font-size: 25px;
+
+                                &:hover {
+                                    color: red;
+                                    cursor: pointer;
+                                }
+                            }
+
+                            .red {
+                                color: red;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     footer {
-        background-color: #1a1a1a;
+        background-color: $secondary-color;
         padding: 20px;
 
         .container {
@@ -137,9 +257,19 @@ body {
                 display: flex;
                 flex-wrap: wrap;
 
+                .col-left,
+                .col-right {
+                    color: $text-color;
+                }
+
                 .col-left {
                     width: 50%;
-                    color: white;
+
+                    @media screen and (max-width: 520px) {
+                        width: 100%;
+                        text-align: center;
+                        margin-bottom: 40px;
+                    }
 
                     h2 {
                         margin-bottom: 50px;
@@ -153,7 +283,7 @@ body {
                             list-style-type: none;
 
                             a {
-                                color: white;
+                                color: $text-color;
                                 text-decoration: none;
 
                                 &:hover {
@@ -163,10 +293,15 @@ body {
                         }
                     }
                 }
+
                 .col-right {
                     width: 50%;
-                    color: white;
                     text-align: right;
+
+                    @media screen and (max-width: 520px) {
+                        width: 100%;
+                        text-align: center;
+                    }
 
                     h3 {
                         margin-bottom: 50px;
@@ -174,16 +309,21 @@ body {
 
                     ul {
                         display: flex;
-                        justify-content: right;
+                        justify-content: flex-end;
                         gap: 10px;
+
+                        @media screen and (max-width: 520px) {
+                            justify-content: center;
+                        }
 
                         li {
                             list-style-type: none;
+
                             i {
                                 font-size: 25px;
 
                                 &:hover {
-                                    color: #ff6900;
+                                    color: $hover-text-color;
                                 }
                             }
                         }
