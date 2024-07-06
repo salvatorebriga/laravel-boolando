@@ -1,7 +1,7 @@
 <div class="col-left">
   <ul>
-    <li><a href=""> Donna</a></li>
-    <li><a href=""> Uomo</a></li>
-    <li><a href=""> Bambini</a></li>
+    <li><a href="/"> HomePage</a></li>
+    <li><a href="/about"> About</a></li>
+    <li><a href="/contact"> Contact</a></li>
   </ul>
 </div>
