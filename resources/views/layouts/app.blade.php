@@ -14,7 +14,6 @@
     <!-- <img src="{{ Vite::asset('resources/img/duck.jpg') }}" alt="Paperella Laravel Template"> -->
     @include('header.header')
 
-
     <main>
       <div class="container">
         @yield('main')

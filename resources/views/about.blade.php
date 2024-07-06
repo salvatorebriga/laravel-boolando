@@ -1,4 +1,4 @@
 @extends('layouts.app')
-@section('name')
-  <h3> {{ $title }} </h3>
+@section('main')
+  <h3> Sezione {{ $title }} </h3>
 @endsection
