@@ -11,15 +11,18 @@
   </head>
 
   <body>
+    {{-- HEADER COMUNE IN TUTTE LE PAGINE --}}
     <!-- <img src="{{ Vite::asset('resources/img/duck.jpg') }}" alt="Paperella Laravel Template"> -->
     @include('header.header')
 
+    {{-- IN QUESTA WEB APP CAMBIA SOLO IL CONTENUTO DEL MAIN --}}
     <main>
       <div class="container">
         @yield('main')
       </div>
     </main>
 
+    {{-- FOOTER COMUNE IN TUTTE LE PAGINE --}}
     @include('footer.footer')
   </body>
 
