@@ -7,4 +7,124 @@
 
 body {
     background-color: white;
+
+    header {
+        position: fixed;
+        z-index: 1;
+        background-color: #ff6900;
+        box-shadow: 0px 0.2px 0.2px #ff6900;
+        border: 0.1px solid rgb(0, 0, 0);
+        width: 100%;
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+
+            .row {
+                display: flex;
+                flex-wrap: wrap;
+
+                .col-left {
+                    width: 30%;
+                    display: flex;
+                    align-items: center;
+                    padding: 20px;
+
+                    ul {
+                        list-style-type: none;
+                        display: flex;
+                        gap: 25px;
+
+                        li {
+                            a {
+                                font-size: 20px;
+                                font-weight: 600;
+                                color: white;
+                                text-decoration: none;
+
+                                &:hover {
+                                    text-decoration: underline;
+                                    color: black;
+                                }
+                            }
+                        }
+                    }
+                }
+                .col-logo {
+                    width: 40%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 20px;
+
+                    img {
+                        width: 175px;
+                    }
+                }
+                .col-right {
+                    width: 30%;
+                    display: flex;
+                    justify-content: right;
+                    align-items: center;
+                    padding: 20px;
+                    gap: 25px;
+
+                    i {
+                        font-size: 20px;
+                        color: white;
+
+                        &:hover {
+                            color: black;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 720px) {
+        header {
+            .container {
+                .row {
+                    .col-left {
+                        width: 50%;
+                    }
+
+                    .col-logo {
+                        width: 50%;
+                    }
+
+                    .col-right {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        header {
+            .container {
+                .row {
+                    .col-left {
+                        display: none;
+                    }
+
+                    .col-logo {
+                        width: 100%;
+                    }
+
+                    .col-right {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    main {
+    }
+
+    footer {
+    }
 }
